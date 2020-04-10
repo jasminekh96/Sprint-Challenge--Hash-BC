@@ -24,11 +24,43 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+    Access an array at a specific index: O(1) means it takes a constant time
+    Append (add to the back): O(1) unless array is full then it is O(n) and O(n) means a set twice the size will take twice the time it takes an amount of time linear with the size of the set
+    Delete: O(1) but if there isn't enough space and you need to shift then it taks O(n)
+    Insert or Delete in the front: O(n) data is being copied over and you need to resize
+    Insert and delete in back: O(1) but if data is being copied over and there isn't enough space then it needs to shift becoming O(n)
+
+
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+    If a resizing needs to happen python will do it automatically to extend the storage, but O(n) is the worst case scenario because you have to copy the items over to the new array before it will add the items you're trying to append. But during the copying it needs to go over each item in that array one by one. Which I think we referred to as being expensive. 
+
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+
+    Explain how a blockchain is structured. 
+
+    Blockchain is a data structure, it's chains contain all of the transactions recorded. Bitcoin?
+
+    What are the blocks, what is the chain? 
+
+    Each link in the chain is called a block and has these components: index, timestamp, transactions, proof, previous hash.
+
+    How is the data organized?
+
+    Every block in the blockchain is dependent on the block before it. So every time you change a block it has the block before it still intact. 
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+    Proof of work secures the chain by making it impossible to cheat, because the cheater would have to do a greater amount of work to crack the code, a code could be something like when hashing we added the 6 zeroes to make it difficult to crack the code. 
+
+    If we're talking about crypto currency an attack can be altering the amount of exchange, altering the block chain to make it look like youre recieving 3 instead of 1, but that wouldnt match up with the block before it so not really a possible attack.
+
+    An attack that is possible is that some can access the hashes and change those hashes for their own benfit. 
+
+    Some examples of using proof of work are SHA-256, 32-byte-hash, 64 hexidecimal
 
 ## Project Set Up
 
