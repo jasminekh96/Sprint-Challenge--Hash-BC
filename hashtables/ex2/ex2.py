@@ -1,8 +1,6 @@
 #  Hint:  You may not need all of these.  Remove the unused functions.
 from hashtables import (HashTable,
                         hash_table_insert,
-                        hash_table_remove,
-                        hash_table_retrieve,
                         hash_table_resize)
 
 
@@ -20,4 +18,22 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
 
-    pass
+    # a loop? use insert and resize when tickets are done?
+
+    for tick in tickets:
+        while tick.source is not None:
+            hash_table_insert(hashtable, tick.source, tick.destination)
+            FirstTick = None
+            if tick.source is None:
+                hash_table_insert(hashtable, tick.source, tick.destination)
+                hash_table_resize()
+                FirstTick = tick
+            elif tick.source == FirstTick.destination:
+                hash_table_insert(hashtable, tick.source, tick.destination)
+                hash_table_resize()
+                FirstTick = tick
+
+        
+
+
+    return route
